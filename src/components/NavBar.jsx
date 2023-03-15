@@ -10,7 +10,7 @@ const NavBar = () => {
   const [searchInput, setSearchInput] = useState(false);
 
   const handleSearch = () => {
-    if (document.querySelector('.search_input').value === 'Quick Search ...') {
+    if (document.querySelector('.search_input').value === '') {
       setSearchInput(false);
     } else {
       setSearchInput(true);
@@ -20,9 +20,9 @@ const NavBar = () => {
   return (
     <nav className="flex justify-around items-center bg-white shadow inner-shadow-xl h-[70px]">
       <img src={logo} alt="logo" />
-      <div className="flex items-center border h-[32px] p-2 rounded-md bg-[#f7f7f7]">
+      <div className="flex items-center border h-[32px] p-2 rounded-md bg-[#f7f7f7] w-96">
         <img className={`${searchInput ? 'hidden' : 'block'}`} src={search} alt="search" />
-        <input className={`search_input border-none outline-none bg-[#f7f7f7] pl-2 `} onKeyDown={() => handleSearch()} type="text" placeholder="Quick Search ..." />
+        <input className={`${searchInput ? 'pl-0' : 'pl-2'} search_input border-none outline-none bg-[#f7f7f7]`} onChange={() => handleSearch()} type="text" placeholder="Quick Search ..." />
       </div>
 
       <ul className="flex text-[#b6b6b6] text-sm">
