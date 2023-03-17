@@ -1,5 +1,6 @@
 import React from 'react';
 import Training from './Training';
+import TrainingQuiz from './TrainingQuiz';
 
 const Main = () => {
   return (
@@ -14,6 +15,7 @@ const Main = () => {
         </div>
       </div>
       <Training />
+      <TrainingQuiz />
     </div>
   );
 };

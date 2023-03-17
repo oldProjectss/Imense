@@ -4,9 +4,9 @@ import safety from '../assets/img/securitytraining1.svg';
 
 const Training = () => {
   return (
-    <div className="inline-flex justify-center items-start my-4 h-max">
-      <div className="bg-white shadow shadow-md p-4 rounded-md mr-2 w-3/4 h-full">
-        <div className="flex my-2">
+    <div className="flex justify-center items-start my-4 h-[480px]">
+      <div className="bg-white shadow shadow-md px-4 rounded-md mr-2 w-3/4 h-full">
+        <div className="flex my-2 my-4">
           <div className="flex flex-col w-full items-between px-2">
             <div className="flex justify-between font-bold">
               <p className="text-[#616161] font-bold">Category</p>
@@ -42,7 +42,7 @@ const Training = () => {
             </select>
           </div>
         </div>
-        <div className="flex w-full my-2">
+        <div className="flex w-full my-4">
           <div className="flex flex-col w-full items-between px-2 w-2/3">
             <p className="text-[#616161] font-bold">Training</p>
             <select className="w-full border border-[#dcdcdc] text-[#4e4e4e] bg-transparent font-bold rounded-md p-3 my-2">
@@ -60,15 +60,15 @@ const Training = () => {
             </select>
           </div>
         </div>
-        <div className="flex w-full my-2">
+        <div className="flex w-full mt-4">
           <div className="flex flex-col w-1/3">
-            <div className="flex flex-col w-full items-between px-2">
+            <div className="flex flex-col w-full items-between px-2 my-2">
               <div className="flex justify-between font-bold">
                 <p className="text-[#616161] font-bold">Departments</p>
                 <p className="text-[#b8b8b8]">Optional</p>
               </div>
-              <select className="w-full border border-[#dcdcdc] text-[#888] italic bg-transparent rounded-md p-3 my-2">
-                <option value="" disabled selected>
+              <select className="w-full border border-[#dcdcdc] text-[#888] italic bg-transparent rounded-md p-3 my-2" defaultValue="0">
+                <option value="0" disabled>
                   Select departments
                 </option>
                 <option value="1">🦺 Safety</option>
@@ -76,13 +76,13 @@ const Training = () => {
                 <option value="3">🦺 Safety 3</option>
               </select>
             </div>
-            <div className="flex flex-col w-full items-between px-2">
+            <div className="flex flex-col w-full items-between px-2 my-2">
               <div className="flex justify-between font-bold">
                 <p className="text-[#616161] font-bold">Fonctions</p>
                 <p className="text-[#b8b8b8]">Optional</p>
               </div>
-              <select className="w-full border border-[#dcdcdc] text-[#888] italic bg-transparent rounded-md p-3 my-2">
-                <option value="" disabled selected>
+              <select className="w-full border border-[#dcdcdc] text-[#888] italic bg-transparent rounded-md p-3 my-2" defaultValue="0">
+                <option value="0" disabled>
                   Select functions
                 </option>
                 <option value="1">🦺 Safety</option>
@@ -100,9 +100,9 @@ const Training = () => {
         </div>
         {/* end */}
       </div>
-      <div className="bg-white shadow shadow-md p-4 rounded-md mx-2 w-2/4 h-full">
+      <div className="bg-white shadow shadow-md p-4 rounded-md mx-2 w-2/4 h-full ">
         <p className="text-[#616161] font-bold">Image</p>
-        <div className="flex flex-col justify-center items-center border border-dashed p-10 my-4 rounded-md">
+        <div className="flex flex-col justify-center items-center border border-4 border-dashed p-10 my-4 rounded-md h-3/4">
           <img className="mb-2" src={upload} alt="placeholder" />
           <p className="text-[#b4b4b4] text-center">
             Drag and drop your image here Or{' '}
@@ -111,11 +111,11 @@ const Training = () => {
             </a>
           </p>
         </div>
-        <p className="text-[#b4b4b4] font-bold">*Only JPG, PNG files are allowed. Image must be less than 2 MB</p>
+        <p className="text-[#b4b4b4] font-bold mt-10">*Only JPG, PNG files are allowed. Image must be less than 2 MB</p>
       </div>
-      <div className="bg-white shadow shadow-md p-4 rounded-md ml-2 w-1/4 h-full">
+      <div className="bg-white shadow shadow-md p-4 rounded-md ml-2 w-1/4 h-full ">
         <p className="text-[#616161] font-bold">Training file</p>
-        <div className="flex flex-col justify-center items-center border border-dashed p-5 my-4 rounded-md">
+        <div className="flex flex-col justify-center items-center border border-4 border-dashed p-5 my-4 rounded-md">
           <img className="mb-2" src={upload} alt="placeholder" />
           <p className="text-[#b4b4b4] font-bold text-center">
             Drag and drop your image here Or{' '}
@@ -124,15 +124,15 @@ const Training = () => {
             </a>
           </p>
         </div>
-        <div className="flex justify-between items-center my-2 p-2 rounded-md bg-[#47ca5b]">
+        <div className="flex justify-between items-center text-sm p-2 rounded-md bg-[#47ca5b]">
           <p className="text-white">
             Completed
             <br />
             workingAtHeight.pdf
           </p>
-          <button className="bg-white hover:bg-white/90 text-[#b5b5b5] rounded-full w-fit h-fit px-2">X</button>
+          <button className="bg-white hover:bg-white/90 text-[#b5b5b5] rounded-full w-6 font-bold text-center h-6"><i className='fas fa-close'></i></button>
         </div>
-        <p className="text-[#b4b4b4] font-bold">*Only Video, PDF and SlideShow files are allowed.</p>
+        <p className="text-[#b4b4b4] font-bold mt-2">*Only Video, PDF and SlideShow files are allowed.</p>
         <hr className="mt-4 mb-2" />
         <p className="font-bold relative h-3 w-fit -top-5 left-28 text-[#b5b5b5] bg-white">OR</p>
         <p className="text-[#616161] font-bold">Media URL</p>
