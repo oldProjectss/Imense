@@ -1,15 +1,110 @@
 import React from 'react';
 import upload from '../assets/img/photo_upload.svg';
+import safety from '../assets/img/securitytraining1.svg';
 
 const Training = () => {
   return (
-    <div className="flex justify-center items-start my-4 h-max">
-      <div className="bg-white shadow shadow-md p-4 rounded-md mr-2 w-3/4 h-full"></div>
+    <div className="inline-flex justify-center items-start my-4 h-max">
+      <div className="bg-white shadow shadow-md p-4 rounded-md mr-2 w-3/4 h-full">
+        <div className="flex my-2">
+          <div className="flex flex-col w-full items-between px-2">
+            <div className="flex justify-between font-bold">
+              <p className="text-[#616161] font-bold">Category</p>
+              <a className="text-[#1b8bce]" href="#">
+                Add new +
+              </a>
+            </div>
+            <select className="w-full border border-[#dcdcdc] text-[#4e4e4e] bg-transparent font-bold rounded-md p-3 my-2">
+              <option value="1">🦺 Safety</option>
+              <option value="2">🦺 Safety 2</option>
+              <option value="3">🦺 Safety 3</option>
+            </select>
+          </div>
+          <div className="flex flex-col w-full items-between px-2">
+            <div className="flex justify-between font-bold">
+              <p className="text-[#616161] font-bold">Topic</p>
+              <a className="text-[#1b8bce]" href="#">
+                Add new +
+              </a>
+            </div>
+            <select className="w-full border border-[#dcdcdc] text-[#4e4e4e] bg-transparent font-bold rounded-md p-3 my-2">
+              <option value="1">🦺 VCA</option>
+              <option value="2">🦺 VCA 2</option>
+              <option value="3">🦺 VCA 3</option>
+            </select>
+          </div>
+          <div className="flex flex-col w-full items-between px-2">
+            <p className="text-[#616161] font-bold">Category</p>
+            <select className="w-full border border-[#dcdcdc] text-[#4e4e4e] bg-transparent font-bold rounded-md p-3 my-2">
+              <option value="1">1 year</option>
+              <option value="2">2 years</option>
+              <option value="3">3 years</option>
+            </select>
+          </div>
+        </div>
+        <div className="flex w-full my-2">
+          <div className="flex flex-col w-full items-between px-2 w-2/3">
+            <p className="text-[#616161] font-bold">Training</p>
+            <select className="w-full border border-[#dcdcdc] text-[#4e4e4e] bg-transparent font-bold rounded-md p-3 my-2">
+              <option value="1">Working at height</option>
+              <option value="2">Working at height 2</option>
+              <option value="3">Working at height 3</option>
+            </select>
+          </div>
+          <div className="flex flex-col w-full items-between px-2 w-1/3">
+            <p className="text-[#616161] font-bold">Assign To</p>
+            <select className="w-full border border-[#dcdcdc] text-[#4e4e4e] bg-transparent font-bold rounded-md p-3 my-2">
+              <option value="1">Internal workers</option>
+              <option value="2">Internal workers 2</option>
+              <option value="3">Internal workers 3</option>
+            </select>
+          </div>
+        </div>
+        <div className="flex w-full my-2">
+          <div className="flex flex-col w-1/3">
+            <div className="flex flex-col w-full items-between px-2">
+              <div className="flex justify-between font-bold">
+                <p className="text-[#616161] font-bold">Departments</p>
+                <p className="text-[#b8b8b8]">Optional</p>
+              </div>
+              <select className="w-full border border-[#dcdcdc] text-[#888] italic bg-transparent rounded-md p-3 my-2">
+                <option value="" disabled selected>
+                  Select departments
+                </option>
+                <option value="1">🦺 Safety</option>
+                <option value="2">🦺 Safety 2</option>
+                <option value="3">🦺 Safety 3</option>
+              </select>
+            </div>
+            <div className="flex flex-col w-full items-between px-2">
+              <div className="flex justify-between font-bold">
+                <p className="text-[#616161] font-bold">Fonctions</p>
+                <p className="text-[#b8b8b8]">Optional</p>
+              </div>
+              <select className="w-full border border-[#dcdcdc] text-[#888] italic bg-transparent rounded-md p-3 my-2">
+                <option value="" disabled selected>
+                  Select functions
+                </option>
+                <option value="1">🦺 Safety</option>
+                <option value="2">🦺 Safety 2</option>
+                <option value="3">🦺 Safety 3</option>
+              </select>
+            </div>
+          </div>
+          <div className="flex w-2/3">
+            <div className="flex flex-col w-full items-between px-2">
+              <p className="text-[#616161] font-bold">Description</p>
+              <textarea className="w-full border border-[#dcdcdc] text-[#4e4e4e] italic bg-transparent rounded-md p-3 my-2 w-full h-full" placeholder="Type here..." />
+            </div>
+          </div>
+        </div>
+        {/* end */}
+      </div>
       <div className="bg-white shadow shadow-md p-4 rounded-md mx-2 w-2/4 h-full">
         <p className="text-[#616161] font-bold">Image</p>
         <div className="flex flex-col justify-center items-center border border-dashed p-10 my-4 rounded-md">
           <img className="mb-2" src={upload} alt="placeholder" />
-          <p className="text-[#b4b4b4] font-bold text-center">
+          <p className="text-[#b4b4b4] text-center">
             Drag and drop your image here Or{' '}
             <a className="text-[#1b8bce]" href="#">
               browse files
