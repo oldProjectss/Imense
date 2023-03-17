@@ -1,11 +1,10 @@
 import React from 'react';
-import Training from './Training';
-import TrainingQuiz from './TrainingQuiz';
+import { QuizContainer, Training, TrainingQuiz } from './';
 
 const Main = () => {
   return (
     <div className="flex flex-col m-10">
-      <div className="flex justify-between mb-2">
+      <div className="flex justify-between items-end mb-2">
         <h1 className="text-[#7c7c7c] text-xl font-bold">Edit Training "Working At Height"</h1>
         <div className="flex justify-center items-center">
           <a href="#" className="text-[#b5b5b5] font-bold py-2 px-4 rounded">
@@ -16,6 +15,7 @@ const Main = () => {
       </div>
       <Training />
       <TrainingQuiz />
+      <QuizContainer />
     </div>
   );
 };
