@@ -17,8 +17,22 @@ const NavBar = () => {
   const [searchInput, setSearchInput] = useState(false);
   const [languageDropdown, setLanguageDropdown] = useState(false);
   const [profileDropdown, setProfileDropdown] = useState(false);
+  const [selectedOption, setSelectedOption] = useState({ lang: 'English (EN)', icon: en });
   const languageDropdownRef = useRef(null);
   const profileDropdownRef = useRef(null);
+
+  const options = [
+    { lang: 'English (EN)', icon: en },
+    { lang: 'Français (FR)', icon: nl },
+    { lang: 'Español (ES)', icon: es },
+    { lang: 'Deutsch (DE)', icon: de },
+    { lang: 'Nederlands (NL)', icon: nl },
+  ];
+
+  const handleOptionClick = (option) => {
+    setSelectedOption(option);
+    setLanguageDropdown(false);
+  };
 
   const handleLanguageDrop = () => {
     setLanguageDropdown((prevState) => !prevState);
@@ -26,10 +40,6 @@ const NavBar = () => {
 
   const handleProfileDrop = () => {
     setProfileDropdown((prevState) => !prevState);
-  };
-
-  const changeLanguage = (e) => {
-    console.log(e.target.firstChild);
   };
 
   const handleSearch = () => {
@@ -81,43 +91,20 @@ const NavBar = () => {
         </button>
 
         {/* Lang */}
-        <div ref={languageDropdownRef}>
-          <button className="text-[#b6b6b6] text-sm rounded-md py-2 mx-2" onClick={handleLanguageDrop}>
-            <img src={en} alt="lang" />
+        <div className="relative bg-white" ref={languageDropdownRef}>
+          <button type="button" className="text-[#b6b6b6] text-sm rounded-md py-2 mx-2" id="options-menu" aria-haspopup="true" aria-expanded="true" onClick={handleLanguageDrop}>
+            <img src={selectedOption.icon} className="w-6 h-full mr-2" />
           </button>
-
-          <ul className={` ${languageDropdown ? 'block' : 'hidden'} absolute py-2 px-4 top-16 bg-white rounded-md shadow shadow-xl`}>
-            <li className='hover:bg-gray-100'>
-              <button className="flex justify-center items-center text-[#b6b6b6] text-sm rounded-md p-2" onClick={(e) => changeLanguage(e)}>
-                <img src={en} alt="eng" />
-                <p className="pl-2 text-[#6b6b6b] rounded-md">English (EN)</p>
-              </button>
-            </li>
-            <li className='hover:bg-gray-100'>
-              <button className="flex justify-center items-center text-[#b6b6b6] text-sm rounded-md p-2" onClick={(e) => changeLanguage(e)}>
-                <img className="rotate-90" src={nl} alt="fr" />
-                <p className="pl-2 text-[#6b6b6b] rounded-md">Français (FR)</p>
-              </button>
-            </li>
-            <li className='hover:bg-gray-100'>
-              <button className="flex justify-center items-center text-[#b6b6b6] text-sm rounded-md p-2" onClick={(e) => changeLanguage(e)}>
-                <img src={nl} alt="nl" />
-                <p className="pl-2 text-[#6b6b6b] rounded-md">Nederlands (NL)</p>
-              </button>
-            </li>
-            <li className='hover:bg-gray-100'>
-              <button className="flex justify-center items-center text-[#b6b6b6] text-sm rounded-md p-2" onClick={(e) => changeLanguage(e)}>
-                <img src={es} alt="es" />
-                <p className="pl-2 text-[#6b6b6b] rounded-md">Español (ES)</p>
-              </button>
-            </li>
-            <li className='hover:bg-gray-100'>
-              <button className="flex justify-center items-center text-[#b6b6b6] text-sm rounded-md p-2" onClick={(e) => changeLanguage(e)}>
-                <img src={de} alt="de" />
-                <p className="pl-2 text-[#6b6b6b] rounded-md">Deutsch (DE)</p>
-              </button>
-            </li>
-          </ul>
+          {languageDropdown && (
+            <div className="absolute py-2 px-4 mt-1 top-12 -left-14 bg-white rounded-md shadow shadow-xl">
+              {options.map((option, i) => (
+                <div key={option.lang} className={`flex cursor-pointer w-40 p-2 hover:bg-gray-100 ${selectedOption === option.lang ? 'bg-gray-100 text-gray-900' : 'text-gray-700'}`} onClick={() => handleOptionClick(option)}>
+                  <img src={option.icon} className={`${i === 1 ? 'rotate-90' : ''} h-full mr-2`} />
+                  <span>{option.lang}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Profile menu */}
@@ -138,19 +125,19 @@ const NavBar = () => {
               <p className="pl-2 text-[#6b6b6b] rounded-md">besix.group@besix.be</p>
             </li>
             <hr className="my-2" />
-            <li className='hover:bg-gray-100'>
+            <li className="hover:bg-gray-100">
               <button className="flex justify-center items-center text-[#b6b6b6] text-sm rounded-md p-2">
                 <img src={settings} alt="settings" />
                 <p className="pl-2 text-[#6b6b6b] rounded-md">Profile settings</p>
               </button>
             </li>
-            <li className='hover:bg-gray-100'>
+            <li className="hover:bg-gray-100">
               <button className="flex justify-center items-center text-[#b6b6b6] text-sm rounded-md p-2">
                 <img src={policies} alt="policies" />
                 <p className="pl-2 text-[#6b6b6b] rounded-md">Our policies</p>
               </button>
             </li>
-            <li className='hover:bg-gray-100'>
+            <li className="hover:bg-gray-100">
               <button className="flex justify-center items-center text-[#b6b6b6] text-sm rounded-md p-2">
                 <img src={logout} alt="Log out" />
                 <p className="pl-2 text-[#6b6b6b] rounded-md">Log out</p>
