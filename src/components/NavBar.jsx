@@ -93,7 +93,7 @@ const NavBar = () => {
         {/* Lang */}
         <div className="relative bg-white" ref={languageDropdownRef}>
           <button type="button" className="text-[#b6b6b6] text-sm rounded-md py-2 mx-2" id="options-menu" aria-haspopup="true" aria-expanded="true" onClick={handleLanguageDrop}>
-            <img src={selectedOption.icon} className="w-6 h-full mr-2" />
+            <img src={selectedOption.icon} className={`${selectedOption.lang === 'Français (FR)' ? 'rotate-90' : ''} w-6 h-full mr-2`} />
           </button>
           {languageDropdown && (
             <div className="absolute py-2 px-4 mt-1 top-12 -left-14 bg-white rounded-md shadow shadow-xl">
