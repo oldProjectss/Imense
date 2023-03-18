@@ -87,31 +87,31 @@ const NavBar = () => {
           </button>
 
           <ul className={` ${languageDropdown ? 'block' : 'hidden'} absolute py-2 px-4 top-16 bg-white rounded-md shadow shadow-xl`}>
-            <li>
+            <li className='hover:bg-gray-100'>
               <button className="flex justify-center items-center text-[#b6b6b6] text-sm rounded-md p-2" onClick={(e) => changeLanguage(e)}>
                 <img src={en} alt="eng" />
                 <p className="pl-2 text-[#6b6b6b] rounded-md">English (EN)</p>
               </button>
             </li>
-            <li>
+            <li className='hover:bg-gray-100'>
               <button className="flex justify-center items-center text-[#b6b6b6] text-sm rounded-md p-2" onClick={(e) => changeLanguage(e)}>
                 <img className="rotate-90" src={nl} alt="fr" />
                 <p className="pl-2 text-[#6b6b6b] rounded-md">Français (FR)</p>
               </button>
             </li>
-            <li>
+            <li className='hover:bg-gray-100'>
               <button className="flex justify-center items-center text-[#b6b6b6] text-sm rounded-md p-2" onClick={(e) => changeLanguage(e)}>
                 <img src={nl} alt="nl" />
                 <p className="pl-2 text-[#6b6b6b] rounded-md">Nederlands (NL)</p>
               </button>
             </li>
-            <li>
+            <li className='hover:bg-gray-100'>
               <button className="flex justify-center items-center text-[#b6b6b6] text-sm rounded-md p-2" onClick={(e) => changeLanguage(e)}>
                 <img src={es} alt="es" />
                 <p className="pl-2 text-[#6b6b6b] rounded-md">Español (ES)</p>
               </button>
             </li>
-            <li>
+            <li className='hover:bg-gray-100'>
               <button className="flex justify-center items-center text-[#b6b6b6] text-sm rounded-md p-2" onClick={(e) => changeLanguage(e)}>
                 <img src={de} alt="de" />
                 <p className="pl-2 text-[#6b6b6b] rounded-md">Deutsch (DE)</p>
@@ -138,19 +138,19 @@ const NavBar = () => {
               <p className="pl-2 text-[#6b6b6b] rounded-md">besix.group@besix.be</p>
             </li>
             <hr className="my-2" />
-            <li>
+            <li className='hover:bg-gray-100'>
               <button className="flex justify-center items-center text-[#b6b6b6] text-sm rounded-md p-2">
                 <img src={settings} alt="settings" />
                 <p className="pl-2 text-[#6b6b6b] rounded-md">Profile settings</p>
               </button>
             </li>
-            <li>
+            <li className='hover:bg-gray-100'>
               <button className="flex justify-center items-center text-[#b6b6b6] text-sm rounded-md p-2">
                 <img src={policies} alt="policies" />
                 <p className="pl-2 text-[#6b6b6b] rounded-md">Our policies</p>
               </button>
             </li>
-            <li>
+            <li className='hover:bg-gray-100'>
               <button className="flex justify-center items-center text-[#b6b6b6] text-sm rounded-md p-2">
                 <img src={logout} alt="Log out" />
                 <p className="pl-2 text-[#6b6b6b] rounded-md">Log out</p>

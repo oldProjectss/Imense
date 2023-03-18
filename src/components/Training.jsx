@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { CustomSelect } from './';
 import upload from '../assets/img/photo_upload.svg';
 import safety from '../assets/img/securitytraining1.svg';
+import vca from '../assets/img/icontraining2.svg';
 
 const Training = () => {
+
   return (
     <div className="flex justify-center items-start my-4 h-[480px]">
       <div className="bg-white shadow shadow-md px-4 rounded-md mr-2 w-3/4 h-full">
@@ -14,11 +17,7 @@ const Training = () => {
                 Add new +
               </a>
             </div>
-            <select className="w-full border border-[#dcdcdc] text-[#4e4e4e] bg-transparent font-bold rounded-md p-3 my-2">
-              <option value="1">🦺 Safety</option>
-              <option value="2">🦺 Safety 2</option>
-              <option value="3">🦺 Safety 3</option>
-            </select>
+            <CustomSelect options={['Safety', 'Safety 2', 'Safety 3']} defaultValue="Safety" icon={safety} />
           </div>
           <div className="flex flex-col w-full items-between px-2">
             <div className="flex justify-between font-bold">
@@ -27,37 +26,21 @@ const Training = () => {
                 Add new +
               </a>
             </div>
-            <select className="w-full border border-[#dcdcdc] text-[#4e4e4e] bg-transparent font-bold rounded-md p-3 my-2">
-              <option value="1">🦺 VCA</option>
-              <option value="2">🦺 VCA 2</option>
-              <option value="3">🦺 VCA 3</option>
-            </select>
+            <CustomSelect options={['VCA', 'VCA 2', 'VCA 3']} defaultValue="VCA" icon={vca} />
           </div>
           <div className="flex flex-col w-full items-between px-2">
             <p className="text-[#616161] font-bold">Category</p>
-            <select className="w-full border border-[#dcdcdc] text-[#4e4e4e] bg-transparent font-bold rounded-md p-3 my-2">
-              <option value="1">1 year</option>
-              <option value="2">2 years</option>
-              <option value="3">3 years</option>
-            </select>
+            <CustomSelect options={['1 year', '2 years', '3 years']} defaultValue="1 year" icon="" />
           </div>
         </div>
         <div className="flex w-full my-4">
           <div className="flex flex-col w-full items-between px-2 w-2/3">
             <p className="text-[#616161] font-bold">Training</p>
-            <select className="w-full border border-[#dcdcdc] text-[#4e4e4e] bg-transparent font-bold rounded-md p-3 my-2">
-              <option value="1">Working at height</option>
-              <option value="2">Working at height 2</option>
-              <option value="3">Working at height 3</option>
-            </select>
+            <CustomSelect options={['Working at height', 'Working at height 2', 'Working at height 3']} defaultValue="Working at height" icon={vca} style={'flex-row-reverse justify-between w-full'} />
           </div>
           <div className="flex flex-col w-full items-between px-2 w-1/3">
             <p className="text-[#616161] font-bold">Assign To</p>
-            <select className="w-full border border-[#dcdcdc] text-[#4e4e4e] bg-transparent font-bold rounded-md p-3 my-2">
-              <option value="1">Internal workers</option>
-              <option value="2">Internal workers 2</option>
-              <option value="3">Internal workers 3</option>
-            </select>
+            <CustomSelect options={['Internal workers', 'Internal workers 1', 'Internal workers 2']} defaultValue="Internal workers" icon="" />
           </div>
         </div>
         <div className="flex w-full mt-4">
@@ -67,28 +50,14 @@ const Training = () => {
                 <p className="text-[#616161] font-bold">Departments</p>
                 <p className="text-[#b8b8b8]">Optional</p>
               </div>
-              <select className="w-full border border-[#dcdcdc] text-[#888] italic bg-transparent rounded-md p-3 my-2" defaultValue="0">
-                <option value="0" disabled>
-                  Select departments
-                </option>
-                <option value="1">🦺 Safety</option>
-                <option value="2">🦺 Safety 2</option>
-                <option value="3">🦺 Safety 3</option>
-              </select>
+              <CustomSelect options={['Telecommunications', 'Safety', 'Marketing']} defaultValue="Select departments" icon="" style={'italic font-normal text-[#888]'} />
             </div>
             <div className="flex flex-col w-full items-between px-2 my-2">
               <div className="flex justify-between font-bold">
                 <p className="text-[#616161] font-bold">Fonctions</p>
                 <p className="text-[#b8b8b8]">Optional</p>
               </div>
-              <select className="w-full border border-[#dcdcdc] text-[#888] italic bg-transparent rounded-md p-3 my-2" defaultValue="0">
-                <option value="0" disabled>
-                  Select functions
-                </option>
-                <option value="1">🦺 Safety</option>
-                <option value="2">🦺 Safety 2</option>
-                <option value="3">🦺 Safety 3</option>
-              </select>
+              <CustomSelect options={['Telecommunications', 'Safety', 'Marketing']} defaultValue="Select functions" icon="" style={'italic font-normal text-[#888]'} />
             </div>
           </div>
           <div className="flex w-2/3">
