@@ -19,15 +19,15 @@ const TrainingQuiz = () => {
           <div className="flex justify-between items-center bg-white py-2 px-4 my-2 mt-4 rounded-md font-bold text-[#616161] border border-[#ebebeb]">
             <p>True</p>
             <div className="flex">
-              <img className="mx-4 h-10" src={checktrue} alt="checkbox" />
-              <img src={upload} alt="upload" />
+              <img className="mx-4 h-10 cursor-pointer" src={checktrue} alt="checkbox" />
+              <img className="cursor-pointer" src={upload} alt="upload" />
             </div>
           </div>
           <div className="flex justify-between items-center bg-white py-2 px-4 rounded-md font-bold text-[#616161] border border-[#ebebeb]">
             <p>False</p>
             <div className="flex">
-              <img className="mx-4 h-10" src={checkfalse} alt="checkbox" />
-              <img src={upload} alt="upload" />
+              <img className="mx-4 h-10 cursor-pointer" src={checkfalse} alt="checkbox" />
+              <img className="cursor-pointer" src={upload} alt="upload" />
             </div>
           </div>
         </div>
@@ -37,7 +37,7 @@ const TrainingQuiz = () => {
             <p className="text-[#b1b1b1] font-bold">Optional</p>
           </div>
           <div className="flex flex-col justify-center items-center border border-4 border-dashed p-20 mt-4 rounded-md h-3/4">
-            <img className="mb-2" src={upload} alt="placeholder" />
+            <img className="mb-2 cursor-pointer" src={upload} alt="placeholder" />
             <p className="text-[#b4b4b4] text-center">
               Drag and drop your image here Or{' '}
               <a className="text-[#1b8bce]" href="#">
@@ -57,15 +57,15 @@ const TrainingQuiz = () => {
           <div className="flex justify-between items-center bg-white py-2 px-4 my-2 mt-4 rounded-md font-bold text-[#616161] border border-[#ebebeb]">
             <p>True</p>
             <div className="flex">
-              <img className="mx-4 h-10" src={checktrue} alt="checkbox" />
-              <img src={upload} alt="upload" />
+              <img className="mx-4 h-10 cursor-pointer" src={checktrue} alt="checkbox" />
+              <img className="cursor-pointer" src={upload} alt="upload" />
             </div>
           </div>
           <div className="flex justify-between items-center bg-white py-2 px-4 rounded-md font-bold text-[#616161] border border-[#ebebeb]">
             <p>False</p>
             <div className="flex">
-              <img className="mx-4 h-10" src={checkfalse} alt="checkbox" />
-              <img src={upload} alt="upload" />
+              <img className="mx-4 h-10 cursor-pointer" src={checkfalse} alt="checkbox" />
+              <img className="cursor-pointer" src={upload} alt="upload" />
             </div>
           </div>
         </div>
@@ -75,7 +75,7 @@ const TrainingQuiz = () => {
             <p className="text-[#b1b1b1] font-bold">Optional</p>
           </div>
           <div className="flex flex-col justify-center items-center border border-4 border-dashed p-20 mt-4 rounded-md h-3/4">
-            <img className="mb-2" src={upload} alt="placeholder" />
+            <img className="mb-2 cursor-pointer" src={upload} alt="placeholder" />
             <p className="text-[#b4b4b4] text-center">
               Drag and drop your image here Or{' '}
               <a className="text-[#1b8bce]" href="#">
@@ -85,7 +85,7 @@ const TrainingQuiz = () => {
           </div>
         </div>
       </div>
-      <button className='p-4 mt-2 bg-[#e1efff] text-[#2c8eff] w-full font-bold text-2xl rounded-md'>Add Question +</button>
+      <button className="p-4 mt-2 bg-[#e1efff] text-[#2c8eff] w-full font-bold text-2xl rounded-md">Add Question +</button>
     </div>
   );
 };

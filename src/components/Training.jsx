@@ -103,7 +103,7 @@ const Training = () => {
       <div className="bg-white shadow shadow-md p-4 rounded-md mx-2 w-2/4 h-full ">
         <p className="text-[#616161] font-bold">Image</p>
         <div className="flex flex-col justify-center items-center border border-4 border-dashed p-10 my-4 rounded-md h-3/4">
-          <img className="mb-2" src={upload} alt="placeholder" />
+          <img className="mb-2 cursor-pointer" src={upload} alt="placeholder" />
           <p className="text-[#b4b4b4] text-center">
             Drag and drop your image here Or{' '}
             <a className="text-[#1b8bce]" href="#">
@@ -116,7 +116,7 @@ const Training = () => {
       <div className="bg-white shadow shadow-md p-4 rounded-md ml-2 w-1/4 h-full ">
         <p className="text-[#616161] font-bold">Training file</p>
         <div className="flex flex-col justify-center items-center border border-4 border-dashed p-5 my-4 rounded-md">
-          <img className="mb-2" src={upload} alt="placeholder" />
+          <img className="mb-2 cursor-pointer" src={upload} alt="placeholder" />
           <p className="text-[#b4b4b4] font-bold text-center">
             Drag and drop your image here Or{' '}
             <a className="text-[#1b8bce]" href="#">
@@ -130,7 +130,9 @@ const Training = () => {
             <br />
             workingAtHeight.pdf
           </p>
-          <button className="bg-white hover:bg-white/90 text-[#b5b5b5] rounded-full w-6 font-bold text-center h-6"><i className='fas fa-close'></i></button>
+          <button className="bg-white hover:bg-white/90 text-[#b5b5b5] rounded-full w-6 font-bold text-center h-6">
+            <i className="fas fa-close"></i>
+          </button>
         </div>
         <p className="text-[#b4b4b4] font-bold mt-2">*Only Video, PDF and SlideShow files are allowed.</p>
         <hr className="mt-4 mb-2" />
