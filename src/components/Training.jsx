@@ -7,8 +7,8 @@ import vca from '../assets/img/icontraining2.svg';
 const Training = () => {
 
   return (
-    <div className="flex justify-center items-start my-4 h-[480px]">
-      <div className="bg-white shadow shadow-md px-4 rounded-md mr-2 w-3/4 h-full">
+    <div className="flex justify-center my-4 items-stretch">
+      <div className="bg-white shadow shadow-md px-4 rounded-md mr-2 w-3/4">
         <div className="flex my-2 my-4">
           <div className="flex flex-col w-full items-between px-2">
             <div className="flex justify-between font-bold">
@@ -69,7 +69,7 @@ const Training = () => {
         </div>
         {/* end */}
       </div>
-      <div className="bg-white shadow shadow-md p-4 rounded-md mx-2 w-2/4 h-full ">
+      <div className="bg-white shadow shadow-md p-4 rounded-md mx-2 w-2/4">
         <p className="text-[#616161] font-bold">Image</p>
         <div className="flex flex-col justify-center items-center border border-4 border-dashed p-10 my-4 rounded-md h-3/4">
           <img className="mb-2 cursor-pointer" src={upload} alt="placeholder" />
@@ -82,7 +82,7 @@ const Training = () => {
         </div>
         <p className="text-[#b4b4b4] font-bold mt-10">*Only JPG, PNG files are allowed. Image must be less than 2 MB</p>
       </div>
-      <div className="bg-white shadow shadow-md p-4 rounded-md ml-2 w-1/4 h-full ">
+      <div className="bg-white shadow shadow-md p-4 rounded-md ml-2 w-1/4">
         <p className="text-[#616161] font-bold">Training file</p>
         <div className="flex flex-col justify-center items-center border border-4 border-dashed p-5 my-4 rounded-md">
           <img className="mb-2 cursor-pointer" src={upload} alt="placeholder" />
