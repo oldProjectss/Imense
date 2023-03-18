@@ -3,7 +3,7 @@ import { Main, NavBar } from './components';
 
 const App = () => {
   return (
-    <div>
+    <div className="w-full">
       <NavBar />
       <Main />
     </div>

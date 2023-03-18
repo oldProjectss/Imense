@@ -1,17 +1,18 @@
 import React from 'react';
 import { Quiz } from './';
-import WebcamQuiz from './WebcamQuiz';
 import { quizSettings } from '../constants';
 
 const QuizContainer = () => {
   return (
     // <div>
-      <div className="flex justify-start items-center overflow-scroll w-full">
-        {quizSettings.map((setting) => (
-          <Quiz key={setting.id} data={setting} />
-        ))}
-        {/* <WebcamQuiz /> */}
-      </div>
+    <div className="flex overflow-y-auto w-full">
+      {quizSettings.map((setting) => (
+        <Quiz key={setting.id} data={setting} />
+      ))}
+      {quizSettings.map((setting) => (
+        <Quiz key={setting.id} data={setting} />
+      ))}
+    </div>
     // </div>
   );
 };
