@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import info from '../assets/img/info.svg';
 import plus from '../assets/img/plus.svg';
 import mines from '../assets/img/mines.svg';
@@ -7,6 +7,8 @@ const Quiz = ({ data }) => {
   const { name, details, defaultVal, icon, valType, on } = data;
   const [count, setCount] = useState(defaultVal);
   const [camOn, setcamOn] = useState(on);
+  const [notification, setNotification] = useState(false);
+  const notificationRef = useRef(null);
 
   const handleOn = () => {
     setcamOn((prevcamOn) => !prevcamOn);
@@ -30,11 +32,31 @@ const Quiz = ({ data }) => {
     setCount((prevCount) => prevCount - 1);
   };
 
+  const handleNotification = () => {
+    setNotification((prevNotification) => !prevNotification);
+  };
+
+  const handleDocumentClick = (e) => {
+    if (notificationRef.current && !notificationRef.current.contains(e.target)) {
+      setNotification(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleDocumentClick);
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, []);
+
   return (
     <>
       {name === 'Webcam validation' ? (
         <div className="p-2 mb-2 mr-2 bg-white rounded-md shadow shadow-md min-w-[176px] w-[176px]">
-          <div className="flex justify-end">
+          <div className="flex justify-end" ref={notificationRef}>
+            <button className="cursor-pointer relative h-3 w-3 left-4 z-10" onClick={handleNotification}>
+              <p className={`${notification ? 'block' : 'hidden'} relative top-3 right-36 bg-white/30 text-[#545454] p-4 rounded w-72 rounded-xl border shadow shadow-xl backdrop-blur-xl`}>{details}</p>
+            </button>
             <img className="cursor-pointer" src={info} alt="info" />
           </div>
           <div className="flex flex-col justify-center items-center text-sm pb-4">
@@ -47,7 +69,10 @@ const Quiz = ({ data }) => {
         </div>
       ) : (
         <div className="p-2 mb-2 mr-2 bg-white rounded-md shadow shadow-md min-w-[176px] w-[176px]">
-          <div className="flex justify-end">
+          <div className="flex justify-end" ref={notificationRef}>
+            <button className="cursor-pointer relative h-3 w-3 left-4 z-10" onClick={handleNotification}>
+              <p className={`${notification ? 'block' : 'hidden'} relative top-3 right-36 bg-white/30 text-[#545454] p-4 rounded w-72 rounded-xl border shadow shadow-xl backdrop-blur-xl`}>{details}</p>
+            </button>
             <img className="cursor-pointer" src={info} alt="info" />
           </div>
           <div className="flex flex-col justify-center items-center text-sm pb-4">

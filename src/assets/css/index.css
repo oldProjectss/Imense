@@ -11,6 +11,7 @@
 body {
   font-family: Lato, sans-serif;
   background-color: #f8fafd;
+  scroll-behavior: smooth;
 }
 
 @layer base {
@@ -19,4 +20,22 @@ body {
     -webkit-appearance: none;
     margin: 0;
   }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #e1ebf0;
+  border-radius: 0.2rem;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #2c8eff;
+  border-radius: 0.2rem;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #2c7eff;
 }
